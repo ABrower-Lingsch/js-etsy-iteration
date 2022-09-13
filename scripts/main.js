@@ -66,4 +66,4 @@ const madeBy = items.filter(function (item) {
   return item.who_made === "i_did";
 });
 
-console.log(madeBy.length, "were made by their sellers");
+console.log(`${madeBy.length} were made by their sellers`);
