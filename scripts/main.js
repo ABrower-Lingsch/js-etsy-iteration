@@ -1,69 +1,73 @@
-//////////////////////////////////////////////////////////////  #1
+(function () {
+  "use strict";
 
-const prices = items.map(function (item) {
-  return item.price;
-});
+  //////////////////////////////////////////////////////////////  #1
 
-function getAvg(prices) {
-  const total = prices.reduce((acc, i) => acc + i, 0);
-  return total / prices.length;
-}
+  const prices = items.map(function (item) {
+    return item.price;
+  });
 
-const avgPrice = getAvg(prices);
-console.log(`The average price is $${avgPrice.toFixed(2)}.`);
+  function getAvg(prices) {
+    const total = prices.reduce((acc, i) => acc + i, 0);
+    return total / prices.length;
+  }
 
-//////////////////////////////////////////////////////////////  #2
+  const avgPrice = getAvg(prices);
+  console.log(`The average price is $${avgPrice.toFixed(2)}.`);
 
-const inRange = items.filter(function (item) {
-  return item.price >= 14 && item.price <= 18;
-});
+  //////////////////////////////////////////////////////////////  #2
 
-console.log("Items that cost between $14.00 USD and $18.00 USD:");
+  const inRange = items.filter(function (item) {
+    return item.price >= 14 && item.price <= 18;
+  });
 
-inRange.forEach(function (item) {
-  console.log(item.title);
-});
+  console.log("Items that cost between $14.00 USD and $18.00 USD:");
 
-//////////////////////////////////////////////////////////////  #3
+  inRange.forEach(function (item) {
+    console.log(item.title);
+  });
 
-const currencyType = items.filter(function (item) {
-  return item.currency_code === "GBP";
-});
+  //////////////////////////////////////////////////////////////  #3
 
-currencyType.forEach(function (item) {
-  console.log(item.title, "costs £", item.price);
-});
+  const currencyType = items.filter(function (item) {
+    return item.currency_code === "GBP";
+  });
 
-//////////////////////////////////////////////////////////////  #4
+  currencyType.forEach(function (item) {
+    console.log(item.title, "costs £", item.price);
+  });
 
-const materialType = items.filter(function (item) {
-  return item.materials.includes("wood");
-});
+  //////////////////////////////////////////////////////////////  #4
 
-materialType.forEach(function (item) {
-  console.log(item.title, "is made of wood");
-});
+  const materialType = items.filter(function (item) {
+    return item.materials.includes("wood");
+  });
 
-//////////////////////////////////////////////////////////////  #5
+  materialType.forEach(function (item) {
+    console.log(item.title, "is made of wood");
+  });
 
-const matQuantity = items.filter(function (item) {
-  return item.materials.length >= 8;
-});
+  //////////////////////////////////////////////////////////////  #5
 
-matQuantity.forEach(function (item) {
-  console.log(
-    item.title,
-    "has",
-    item.materials.length,
-    "materials",
-    item.materials
-  );
-});
+  const matQuantity = items.filter(function (item) {
+    return item.materials.length >= 8;
+  });
 
-//////////////////////////////////////////////////////////////  #6
+  matQuantity.forEach(function (item) {
+    console.log(
+      item.title,
+      "has",
+      item.materials.length,
+      "materials",
+      item.materials
+    );
+  });
 
-const madeBy = items.filter(function (item) {
-  return item.who_made === "i_did";
-});
+  //////////////////////////////////////////////////////////////  #6
 
-console.log(`${madeBy.length} were made by their sellers`);
+  const madeBy = items.filter(function (item) {
+    return item.who_made === "i_did";
+  });
+
+  console.log(`${madeBy.length} were made by their sellers`);
+})();
